@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MemberDao 클래스가 사용할 SQL이 들어 있는 파일 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bitcamp.java110.cms.dao.MapDao">
+
+    <resultMap type="apimap" id="apimapMap">
+        <id column="mapno"        property="no"/>
+        <result column="keyword"   property="keyword"/>
+        <result column="x"  property="x"/>
+        <result column="y"    property="y"/>
+    </resultMap>
+    
+    
+    
+    <sql id="select1">
+        select 
+             mapno,
+             keyword, 
+             x, 
+             y
+          from 
+             mapinfo
+    </sql>
+    
+    
+    <insert id="insert" parameterType="apimap" 
+        useGeneratedKeys="true" keyColumn="mapno" keyProperty="no">
+        insert into mapinfo(mapno,keyword,x,y)
+        values(#{no},#{keyword},#{x},#{y})
+    </insert>
+    
+    <delete id="delete" parameterType="int">
+        delete from mapinfo 
+         where mapno=#{value}
+    </delete>
+
+    <select id="findAll" resultMap="apimapMap">
+        <include refid="select1"></include>
+    </select>
+    
+    <select id="findByKeyword" resultMap="apimapMap" parameterType="String">
+        <include refid="select1"></include>
+         where
+             keyword=#{value}
+    </select>
+    
+</mapper>
