@@ -1,20 +1,16 @@
 package map.web;
 
-import java.io.File;
-import java.util.UUID;
-
 import javax.servlet.ServletContext;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import map.service.MapService;
 
 @Controller
-@RequestMapping("/manager")
+@RequestMapping("/map")
 public class ApimapController {
 
     MapService mapService;
@@ -30,8 +26,8 @@ public class ApimapController {
     }
 
     @GetMapping("list")
-    public void list() throws Exception { 
-        
+    public void list() throws Exception {
+    	
     }
 
     
@@ -44,3 +40,4 @@ public class ApimapController {
     }
 
 }
+

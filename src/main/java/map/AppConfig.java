@@ -24,9 +24,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 // Spring IoC 컨테이너에게 이 클래스가 컨테이너를 위한 설정정보를 담고 있는
 // 클래스라는 것을 알려주기 위해 다음 애노테이션을 추가한다.
-@Configuration 
-@PropertySource("classpath:/map/conf/jdbc.properties")
-@MapperScan("map.dao") //Mybatis에서 자동으로 DAO를 생성할 때 사용할 인터페이스가 들어 있는 패키지 설정
+//@Configuration 
+//@PropertySource("classpath:/map/conf/jdbc.properties")
+//@MapperScan("map.dao") //Mybatis에서 자동으로 DAO를 생성할 때 사용할 인터페이스가 들어 있는 패키지 설정
 // 트랜잭션 관리자를 활성화 하려면 다음 애노테이션을 붙여야 한다.
 @EnableTransactionManagement
 public class AppConfig {

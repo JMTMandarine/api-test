@@ -40,26 +40,14 @@
     
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
-        <url-pattern>/app/*</url-pattern>
+        <url-pattern>/map/*</url-pattern>
     </filter-mapping>
     
     <!-- 프론트 컨트롤러 서블릿 배치하기 -->
     
     <servlet>
-        <servlet-name>app</servlet-name>
+        <servlet-name>map</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!-- 프론트 컨트롤러가 사용할 IoC 컨테이너 클래스를 지정하기  -->
-        <init-param>
-            <param-name>contextClass</param-name>
-            <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
-        </init-param>
-        
-        <!-- 위에서 지정한 IoC 컨테이너가 사용할 Java config 클래스 -->
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>bitcamp.java110.cms.AppConfig</param-value>
-        </init-param>
-        
         <load-on-startup>1</load-on-startup>
         
         <multipart-config>
@@ -69,16 +57,10 @@
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>app</servlet-name>
-        <url-pattern>/app/*</url-pattern>
+        <servlet-name>map</servlet-name>
+        <url-pattern>/map/*</url-pattern>
     </servlet-mapping>
     
-    
-    <!-- 클라이언트가 요청한 URL에 대해 기본 파일을 찾을 때 우선 순위 -->
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
 
 </web-app>
 

@@ -12,7 +12,7 @@ import map.service.MapService;
 @Service
 public class MapServiceImpl implements MapService {
 
-    @Autowired MapDao mapDao;
+    MapDao mapDao;
     
     @Transactional(
             // 이 메서드를 호출하는 쪽에 이미 트랜잭션이 있으면 그 트랜잭션에 소속되게 하고,
